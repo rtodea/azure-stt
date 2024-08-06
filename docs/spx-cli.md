@@ -31,7 +31,7 @@ set -a; source .env; set +a
 
 ```bash
 spx config @key --set $AZURE_SPEECH_TO_TEXT_KEY
-spx config @region --set $AZURE_AZURE_SPEECH_TO_TEXT_REGION
+spx config @region --set $AZURE_SPEECH_TO_TEXT_REGION
 ```
 
 ```bash
