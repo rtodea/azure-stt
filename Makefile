@@ -7,7 +7,7 @@
 # Check out https://aka.ms/csspeech for documentation.
 #
 
-SPEECHSDK_ROOT:=/change/to/point/to/extracted/SpeechSDK
+SPEECHSDK_ROOT:=$(AZURE_SPEECHSDK_ROOT)
 
 # If you'd like to build for
 # - Linux x86 (32-bit), replace "x64" below with "x86".

@@ -52,7 +52,9 @@ void recognizeSpeech(const std::string& compressedFileName)
 
     // Creates an instance of a speech config with specified subscription key and service region.
     // Replace with your own subscription key and service region (e.g., "westus").
-    auto config = SpeechConfig::FromSubscription("YourSubscriptionKey", "YourServiceRegion");
+    auto azureSpeechKey = std::getenv("AZURE_SPEECH_TO_TEXT_KEY");
+    auto azureSpeechRegion = std::getenv("AZURE_SPEECH_TO_TEXT_REGION");
+    auto config = SpeechConfig::FromSubscription(azureSpeechKey, azureSpeechRegion);
 
     AudioStreamContainerFormat inputFormat;
 
