@@ -1,6 +1,6 @@
 .idea
 .env*
-compressed-audio-input
+compressed-audio-input*
 key
 *.log
 region

@@ -25,10 +25,18 @@ INCPATH:=$(SPEECHSDK_ROOT)/include/cxx_api $(SPEECHSDK_ROOT)/include/c_api
 
 LIBS:=-lMicrosoft.CognitiveServices.Speech.core -lpthread -l:libasound.so.2
 
-all: compressed-audio-input
+all: compressed-audio-input compressed-audio-input-push
 
 # Note: to run, LD_LIBRARY_PATH should point to $LIBPATH.
 compressed-audio-input: compressed-audio-input.cpp
+	g++ $< -o $@ \
+	    --std=c++14 \
+	    $(patsubst %,-I%, $(INCPATH)) \
+	    $(patsubst %,-L%, $(LIBPATH)) \
+	    $(LIBS) \
+	    -g
+
+compressed-audio-input-push: compressed-audio-input-push.cpp
 	g++ $< -o $@ \
 	    --std=c++14 \
 	    $(patsubst %,-I%, $(INCPATH)) \
