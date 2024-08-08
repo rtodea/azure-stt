@@ -54,7 +54,11 @@ void recognizeSpeech(const std::string& compressedFileName)
     // Replace with your own subscription key and service region (e.g., "westus").
     auto azureSpeechKey = std::getenv("AZURE_SPEECH_TO_TEXT_KEY");
     auto azureSpeechRegion = std::getenv("AZURE_SPEECH_TO_TEXT_REGION");
+    auto httpsProxy = std::getenv("HTTPS_PROXY");
+    std::cout << httpsProxy << std::endl;
+
     auto config = SpeechConfig::FromSubscription(azureSpeechKey, azureSpeechRegion);
+    config->SetProperty("OPENSSL_DISABLE_CRL_CHECK", "true");
 
     AudioStreamContainerFormat inputFormat;
 

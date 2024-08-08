@@ -1,3 +1,7 @@
 .idea
 .env*
 compressed-audio-input
+key
+*.log
+region
+*.tsv

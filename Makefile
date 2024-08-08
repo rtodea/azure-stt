@@ -33,4 +33,5 @@ compressed-audio-input: compressed-audio-input.cpp
 	    --std=c++14 \
 	    $(patsubst %,-I%, $(INCPATH)) \
 	    $(patsubst %,-L%, $(LIBPATH)) \
-	    $(LIBS)
+	    $(LIBS) \
+	    -g
