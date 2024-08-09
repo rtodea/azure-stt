@@ -1,6 +1,7 @@
 .idea
 .env*
 compressed-audio-input*
+wav-recognition
 key
 *.log
 region
