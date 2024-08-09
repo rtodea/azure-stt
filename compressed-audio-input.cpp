@@ -57,7 +57,8 @@ void recognizeSpeech(const std::string& compressedFileName)
     auto httpsProxy = std::getenv("HTTPS_PROXY");
     std::cout << httpsProxy << std::endl;
 
-    auto config = SpeechConfig::FromSubscription(azureSpeechKey, azureSpeechRegion);
+    // auto config = SpeechConfig::FromSubscription(azureSpeechKey, azureSpeechRegion);
+    auto config = SpeechConfig::FromSubscription("a1da6dd8924a4366bdccf9346cd5322c", "eastus");
     config->SetProperty("OPENSSL_DISABLE_CRL_CHECK", "true");
 
     AudioStreamContainerFormat inputFormat;
